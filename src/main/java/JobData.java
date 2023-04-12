@@ -51,7 +51,13 @@ public class JobData {
         loadData();
 
         // Bonus mission; normal version returns allJobs
-        return new ArrayList<>(allJobs);
+//        return new ArrayList<>(allJobs);
+        ArrayList<HashMap<String, String>> allJobsCopy = new ArrayList<>(allJobs.size());
+        for (HashMap<String, String> job : allJobs) {
+            allJobsCopy.add(new HashMap<>(job));
+        }
+
+        return allJobsCopy;
     }
 
     /**
